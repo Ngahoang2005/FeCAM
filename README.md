@@ -3,9 +3,6 @@
 
 ### This work studies Class-Incremental Learning (CIL) in both normal supervised settings using sufficient training samples (we call it Many-Shot CIL - MSCIL) as well as in few-shot settings using only 5 samples per class for all new classes added after the first step (Few-Shot CIL - FSCIL). We also study the CIL settings using pretrained ViTs.
 
-
-### Note - If you are using FeCAM classifier with a pre-trained ViT, make sure to not use the Tukey's transformation (see supplementary materials for more details).
-
 ## Abstract
 Exemplar-free class-incremental learning (CIL) poses several challenges since it prohibits the rehearsal of data from previous tasks and thus suffers from catastrophic forgetting. Recent approaches to incrementally learning the classifier by freezing the feature extractor after the first task have gained much attention. In this paper, we explore prototypical networks for CIL, which generate new class prototypes using the frozen feature extractor and classify the features based on the Euclidean distance to the prototypes. In an analysis of the feature distributions of classes, we show that classification based on Euclidean metrics is successful for jointly trained features. However, when learning from non-stationary data, we observe that the Euclidean metric is suboptimal and that feature distributions are heterogeneous. To address this challenge, we revisit the anisotropic Mahalanobis distance for CIL. In addition, we empirically show that modeling the feature covariance relations is better than previous attempts at sampling features from normal distributions and training a linear classifier. Unlike existing methods, our approach generalizes to both many- and few-shot CIL settings, as well as to domain-incremental settings. Interestingly, without updating the backbone network, our method obtains state-of-the-art results on several standard continual learning benchmarks.
 
@@ -27,6 +24,8 @@ The code for using FeCAM in the Avalanche codebase is now available.
 Refer to [fecam.py](https://github.com/ContinualAI/avalanche/blob/master/avalanche/models/fecam.py) for the FeCAM classifier code and [update_fecam.py](https://github.com/ContinualAI/avalanche/blob/master/avalanche/training/plugins/update_fecam.py) for the utils with adiitional settings to explore using FeCAM classifier with memory buffer and also the oracle setting (upper bound when computing mean and covariance matrix from all old data seen so far).
 
 ## FeCAM Implementation using pre-trained models also available in [PILOT](https://github.com/dipamgoswami/LAMDA-PILOT)
+
+### Note - If you are using FeCAM classifier with a pre-trained ViT, make sure to not use the Tukey's transformation (see supplementary materials for more details).
 
 ## For many-shot CIL experiments reported in the paper
 
