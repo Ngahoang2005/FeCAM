@@ -1,7 +1,5 @@
 # FeCAM [![Paper](https://img.shields.io/badge/arXiv-2210.07207-brightgreen)](https://arxiv.org/abs/2309.14062)
 
-# FeCAM Implementation using pre-trained models is now available in [PILOT](https://github.com/sun-hailong/LAMDA-PILOT).
-
 ## Code for NeurIPS 2023 paper - FeCAM: Exploiting the Heterogeneity of Class Distributions in Exemplar-Free Continual Learning
 
 ### This work studies Class-Incremental Learning (CIL) in both normal supervised settings using sufficient training samples (we call it Many-Shot CIL - MSCIL) as well as in few-shot settings using only 5 samples per class for all new classes added after the first step (Few-Shot CIL - FSCIL). We also study the CIL settings using pretrained ViTs.
@@ -19,10 +17,11 @@ Exemplar-free class-incremental learning (CIL) poses several challenges since it
   year={2023}
 }
 ```
+# FeCAM Implementation using pre-trained models is now available in [PILOT](https://github.com/sun-hailong/LAMDA-PILOT).
 
-## FeCAM Implementation also available in [Avalanche](https://github.com/ContinualAI/avalanche)
+Refer to [fecam.py](https://github.com/sun-hailong/LAMDA-PILOT/blob/main/models/fecam.py) for the method and [fecam.json](https://github.com/sun-hailong/LAMDA-PILOT/blob/main/exps/fecam.json) for setting the configurations.
 
-The code for using FeCAM in the Avalanche codebase is now available. 
+# FeCAM Implementation is also available in [Avalanche](https://github.com/ContinualAI/avalanche)
 
 Refer to [fecam.py](https://github.com/ContinualAI/avalanche/blob/master/avalanche/models/fecam.py) for the FeCAM classifier code and [update_fecam.py](https://github.com/ContinualAI/avalanche/blob/master/avalanche/training/plugins/update_fecam.py) for the utils with adiitional settings to explore using FeCAM classifier with memory buffer and also the oracle setting (upper bound when computing mean and covariance matrix from all old data seen so far).
 
