@@ -1,4 +1,4 @@
-# FeCAM [![Paper](https://img.shields.io/badge/arXiv-2210.07207-brightgreen)](https://arxiv.org/abs/2309.14062)
+# FeCAM [![Paper](https://img.shields.io/badge/arXiv-2309.14062-brightgreen)](https://arxiv.org/abs/2309.14062)
 
 ## Code for NeurIPS 2023 paper - FeCAM: Exploiting the Heterogeneity of Class Distributions in Exemplar-Free Continual Learning
 
