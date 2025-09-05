@@ -155,6 +155,8 @@ class FeCAM(BaseLearner):
                     for cov in self._cov_mat_shrink:
                         cov = self.normalize_cov2(cov)
                         self._diag_mat.append(self.diagonalization(cov))
+        test_acc = self._compute_accuracy(self._network, test_loader)
+        print(f"Task {self._cur_task} finished → Test Acc: {test_acc:.2f}%")
 
     
     def _build_base_protos(self):
